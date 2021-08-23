@@ -2,3 +2,8 @@
 *.plist
 *.log
 *.conf
+InstalledApplications/
+NetworkSettings/
+Printers/
+SystemInformation/
+UserAccounts/
