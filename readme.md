@@ -18,8 +18,13 @@ Status: Active
 Use @ your own risk, since this application is still in ALPHA no extensive testing has been done (yet). If you want to help see Contributions section.
 
 ---
+## Contents
 
-## Implemented Features
+The script gathers evidence from categories such as Installed Applications, Network Settings, Printers, System Information
+User Accounts, Keychains, Firewall, Launch Agents and Launch Daemons etc. Not all of them work for all of the versions of
+macOS, I am working on implementing some more robust checking of macOS Versions and relative artifacts.
+
+### Implemented Features
 
 The following table keeps track of the artifacts covered:
 
@@ -40,6 +45,10 @@ Keychains|Not Started
 User Domain|Not Started
 
 See locations.csv for detailed list of artifacts.
+
+### Sample Output
+
+![Samole output](media/sample_output.png)
 
 ---
 
@@ -62,3 +71,11 @@ Contributors are welcome, please contact me if you like to help in the developme
 ## References
 
 [1] Brandt, M. (2017). Mac OS Hacking: Professionelle Werkzeuge und Methoden zur forensischen Analyse des Apple-Betriebssystems. Haar: Franzis Verlag.
+
+### Other Inspirations
+
+https://github.com/Yelp/osxcollector/blob/master/osxcollector/osxcollector.py
+
+https://github.com/mac4n6/macMRU-Parser/blob/master/macMRU.py
+
+https://github.com/cugu/awesome-forensics
