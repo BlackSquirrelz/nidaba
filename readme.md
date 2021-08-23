@@ -1,16 +1,31 @@
 # Mac Forensics
 
 Author: Tobias Weisskopf
+
 Date: 2021-08-20
 
-Bash Script to get Forensic Relevant Artifacts from MacOS. Information on Forensic Artifacts used from 
-[1] (Brandt M., 2017)
+Description: Python Application to get Forensic Artifacts from macOS. Information on Forensic Artifacts used from [1] (Brandt M., 2017)
 
-Getting System Information and Installed Applications
+License: MIT
 
-[x] System Information
-[x] Installed Applications
+Status: Active
 
+---
+
+## Implemented Features
+
+The following table track the implemented artifacts so far.
+
+Artifacts|Status
+---|---
+Logs|Testing
+InstalledApplications|Testing
+NetworkSettings|Testing
+Printers|Testing
+SystemInformation|Testing
+UserAccounts|In Progress
+
+---
 
 ## Installation Instructions
 
@@ -18,14 +33,16 @@ Getting System Information and Installed Applications
 2. Copy the repository to a USB Stick
 3. Connect USB Stick to the target device and 
 4. Open Terminal and change to the USB Stick
-5. Give Executable rights to the application `chmod +x get_system_info.sh`
-6. Execute the program with sudo `sudo ./get_system_info.sh`
-
-NOTE: By default the tool will copy the artifacts with `cp -p` to preserve timestamps. The tool will create respective folders in the same folder
-as the script location.
+5. Run nidaba.py with sudo rights `sudo nidaba.py`
 
 ---
 
-References
+## Contributions
+
+Contributors are welcome, please contact me if you like to help in the development.
+
+---
+
+## References
 
 [1] Brandt, M. (2017). Mac OS Hacking: Professionelle Werkzeuge und Methoden zur forensischen Analyse des Apple-Betriebssystems. Haar: Franzis Verlag.

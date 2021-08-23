@@ -1,4 +1,10 @@
 
 *.plist
 *.log
+*.bom
 *.conf
+InstalledApplications/
+NetworkSettings/
+Printers/
+SystemInformation/
+UserAccounts/
