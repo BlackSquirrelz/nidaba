@@ -80,7 +80,7 @@ if __name__ == "__main__":
                 try:
                     get_artifacts(artifact['path'], artifact['category'])
                     if category == 'UserAccounts':
-                        
+                        print(category)
                 except OSError as err:
                     logging.warning(f"Error: {err}")
                     pass
