@@ -1,6 +1,7 @@
 
 *.plist
 *.log
+*.bom
 *.conf
 InstalledApplications/
 NetworkSettings/

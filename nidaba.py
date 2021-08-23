@@ -9,11 +9,13 @@ import subprocess
 import logging
 import time
 import shutil
+import getpass
 
 # TODO: OPTIMIZATION
 
 # Defining Static variables
 CONF_FILE = 'locations.csv'
+USERNAME = getpass.getuser()
 
 # Check if all directories from the configuration file exist, otherwise create them.
 def check_directories(category):
@@ -77,8 +79,10 @@ if __name__ == "__main__":
             if artifact['category'] == category:
                 try:
                     get_artifacts(artifact['path'], artifact['category'])
+                    if category == 'UserAccounts':
+                        
                 except OSError as err:
-                    print(f"OS Error: {err}")
+                    logging.warning(f"Error: {err}")
                     pass
                 
 
