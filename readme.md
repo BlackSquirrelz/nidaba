@@ -31,8 +31,8 @@ UserAccounts|In Progress
 
 1. Clone Repository to your local machine
 2. Copy the repository to a USB Stick
-3. Connect USB Stick to the target device and 
-4. Open Terminal and change to the USB Stick
+3. Connect USB Stick to the target device and,
+4. Open a terminal at the location of the script `/Volumes/<USBSTICK>`
 5. Run nidaba.py with sudo rights `sudo nidaba.py`
 
 ---
