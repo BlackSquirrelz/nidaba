@@ -4,22 +4,57 @@
 # Date: 2021-08-20
 # Description: Tool to gather Forensic Evidence from MacOS
 
+# TODO! Ask user to enter a case number, a analyst etc.
+#read "Please enter a case number"
+filename=0000_test_file.txt
 
-logfile=$1
-filename='triage_dump.txt'
+# Check if Folders already exist
+if ! -d SystemInformation
+then
+    mkdir SystemInformation
+else
+    echo "Warning "
+fi
 
-mkdir SystemInformation
-mkdir InstalledApplications
-mkdir Logs
+if ! -d InstalledApplications
+then
+    mkdir InstalledApplications
+fi
+
+if ! -d Logs
+then
+    mkdir Logs
+fi
+
+# Function to get all PLIST Artifacts
+get_plist_artifact() {
+    plutil -p $plist_path >> $filename
+    cp $plist_path $artifact_category
+}
+
+# Copying Logfiles
+get_logfiles(){
+    cp $logfile_path Logs/
+}
+
+
+echo "Starting Acquisition by $USER on $HOSTNAME"
 
 # Getting System Information
-echo "Starting Acquisition"
 
-echo "\t Getting System Information"
+echo "Getting System Information"
 
 # System Information
 plutil -p /System/Library/CoreServices/SystemVersion.plist
 cp /System/Library/CoreServices/SystemVersion.plist SystemInformation/
+
+# Time of installation
+cp '/private/var/db/.Apple*' SystemInformation/
+
+# Get TimeZone information
+plutil -p /Library/Preferences/.GlobalPreferences.plist
+ls -l /etc/localtime
+
 
 # -------------- Installed Applications -------------------------
 # Installed Applications
