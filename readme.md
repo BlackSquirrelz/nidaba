@@ -17,6 +17,8 @@ Status: Active
 
 Use @ your own risk, since this application is still in ALPHA no extensive testing has been done (yet). If you want to help see Contributions section.
 
+---
+
 ## Implemented Features
 
 The following table keeps track of the artifacts covered:
@@ -36,6 +38,8 @@ Launch Daemons|Not Started
 Freigaben|Not Started
 Keychains|Not Started
 User Domain|Not Started
+
+See locations.csv for detailed list of artifacts.
 
 ---
 

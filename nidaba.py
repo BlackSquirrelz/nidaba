@@ -9,12 +9,16 @@ import logging
 import time
 import shutil
 import getpass
-
-# TODO: OPTIMIZATION
+from hashlib import md5
+from hashlib import sha1
+from hashlib import sha256
 
 # Defining Static variables
 CONF_FILE = 'locations.csv'
 USERNAME = getpass.getuser()
+__VERSION = 0.1
+__AUTHOR = 'Tobias Weisskopf'
+
 
 # Check if all directories from the configuration file exist, otherwise create them.
 def check_directories(category):
@@ -26,6 +30,7 @@ def check_directories(category):
         os.mkdir(category)
         print(f'\t{category} does not exists -> {exists}, creating...')
 
+
 # At the begining, do some housekeeping
 def setup():
 
@@ -36,9 +41,11 @@ def setup():
         reader = csv.reader(f,delimiter=',')
         return [{'category': entry[0], 'path': entry[1], 'permission': entry[2]} for entry in reader if entry[0] != 'ArtifactCategory']
 
+
 # TODO: Actually Checking if ROOT Permissions
 def check_if_root():
     logging.warning(f"No sudo permissions detected, please start the application again with root permissions. This is required, because some artifacts are only accessible by root. You can check these artifacts in the configuration file.")
+
 
 # Getting Artifacts based on CONF_FILE
 def get_artifacts(art_path, art_category):
@@ -50,8 +57,8 @@ def get_artifacts(art_path, art_category):
     # https://docs.python.org/3/library/shutil.html
     shutil.copy2(art_path, art_category)
 
-# Main Function of Program
-if __name__ == "__main__":
+
+def main():
     print(f"Nidaba - Triage tool for MacOS")
     print(30 * '=')
 
@@ -87,5 +94,8 @@ if __name__ == "__main__":
                 except OSError as err:
                     logging.warning(f"Error: {err}")
                     pass
-                
 
+
+# Main Function of Program
+if __name__ == "__main__":
+    main()

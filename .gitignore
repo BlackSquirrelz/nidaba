@@ -1,4 +1,3 @@
-
 *.plist
 *.log
 *.bom
@@ -8,3 +7,12 @@ NetworkSettings/
 Printers/
 SystemInformation/
 UserAccounts/
+Logs/
+.idea
+
+/.idea/.gitignore
+/.idea/MacForensics.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml
