@@ -24,6 +24,13 @@ NetworkSettings|Testing
 Printers|Testing
 SystemInformation|Testing
 UserAccounts|In Progress
+Keychains|Not Started
+Firewall|Not Started
+Launch Agents|Not Started
+Launch Daemons|Not Started
+Freigaben|Not Started
+Keychains|Not Started
+User Domain|Not Started
 
 ---
 
