@@ -26,4 +26,4 @@ Printers,/etc/cups/printers.conf,user
 Printers,/var/log/cups/page_log,user
 Printers,/var/log/cups/access_log,user
 Logs,/var/log/system.log,user
-Logs,/var/log/,user
+Logs,/var/log/install.log,user

@@ -1,11 +1,10 @@
 #!/usr/bin/venv python3
 # -*- coding: utf-8 -*-
-# n.py
+# nidaba.py
 
-from os import read, path
-import os.path
+import os
+from os import path
 import csv
-import subprocess
 import logging
 import time
 import shutil
@@ -37,6 +36,7 @@ def setup():
         reader = csv.reader(f,delimiter=',')
         return [{'category': entry[0], 'path': entry[1], 'permission': entry[2]} for entry in reader if entry[0] != 'ArtifactCategory']
 
+# TODO: Actually Checking if ROOT Permissions
 def check_if_root():
     logging.warning(f"No sudo permissions detected, please start the application again with root permissions. This is required, because some artifacts are only accessible by root. You can check these artifacts in the configuration file.")
 
@@ -50,10 +50,13 @@ def get_artifacts(art_path, art_category):
     # https://docs.python.org/3/library/shutil.html
     shutil.copy2(art_path, art_category)
 
-
+# Main Function of Program
 if __name__ == "__main__":
     print(f"Nidaba - Triage tool for MacOS")
     print(30 * '=')
+
+    start_time = time.gmtime()
+    print(start_time)
 
     # Setting Up Stuff at the beginning.
     artifacts = setup()
