@@ -27,3 +27,4 @@ Printers,/var/log/cups/page_log,user
 Printers,/var/log/cups/access_log,user
 Logs,/var/log/system.log,user
 Logs,/private/var/log/install.log,user
+RemoteManagement,/Library/Preferences/com.apple.RemoteManagement.plist,user
