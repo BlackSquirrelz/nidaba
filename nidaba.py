@@ -19,7 +19,6 @@ USERNAME = getpass.getuser()
 __VERSION = 0.1
 __AUTHOR = 'Tobias Weisskopf'
 
-
 # Check if all directories from the configuration file exist, otherwise create them.
 def check_directories(category):
     time.sleep(0.5)
