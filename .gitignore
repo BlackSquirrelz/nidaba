@@ -9,7 +9,7 @@ SystemInformation/
 UserAccounts/
 Logs/
 .idea
-
+__pycache__/*
 /.idea/.gitignore
 /.idea/MacForensics.iml
 /.idea/misc.xml

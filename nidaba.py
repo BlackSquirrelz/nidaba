@@ -4,11 +4,14 @@
 
 import os
 from os import path
+import argparse
 import csv
 import logging
 import time
 import shutil
 import getpass
+from datetime import date
+from version import __VERSION
 from hashlib import md5
 from hashlib import sha1
 from hashlib import sha256
@@ -16,8 +19,9 @@ from hashlib import sha256
 # Defining Static variables
 CONF_FILE = 'locations.csv'
 USERNAME = getpass.getuser()
-__VERSION = 0.1
+__PROGRAM = 'Nidaba'
 __AUTHOR = 'Tobias Weisskopf'
+__EMAIL = 'me@tobias-weisskopf.dev'
 
 
 # Check if all directories from the configuration file exist, otherwise create them.
@@ -98,4 +102,27 @@ def main():
 
 # Main Function of Program
 if __name__ == "__main__":
-    main()
+    # TODO: List of Modules in the future, so the user can select what to parse.
+    modules = ['soso']
+
+    cur_date = date.today()
+    # Define all arguments that can be submitted
+    arg_parser = argparse.ArgumentParser()
+
+    arg_parser.add_argument('-v', '--verbose', action="store_true", default=False) # Set verbosity
+    arg_parser.add_argument('-o', '--output-path', help='Specify the path for the collectors output')
+    args = arg_parser.parse_args()
+
+    # Get some logging setup
+    # TODO: Define further logging levels
+    if args.verbose:
+        logging_level = logging.INFO
+    else:
+        logging_level = logging.WARNING
+
+    log_name = str(cur_date) + "_basic.log"
+    logging.basicConfig(filename=log_name, level=logging_level)
+
+    logging.info("It works.")
+    logging.info(f"Loaded Modules {modules}")
+    #main()
