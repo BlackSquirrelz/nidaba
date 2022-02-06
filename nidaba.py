@@ -11,10 +11,8 @@ import time
 import shutil
 import getpass
 from datetime import date
-from version import __VERSION
-from hashlib import md5
-from hashlib import sha1
-from hashlib import sha256
+# from version import __VERSION
+import FileListing.filewalker as file_walker
 
 # Defining Static variables
 CONF_FILE = 'locations.csv'
@@ -24,6 +22,7 @@ __AUTHOR = 'Tobias Weisskopf'
 __EMAIL = 'me@tobias-weisskopf.dev'
 
 
+# TODO: Implement LOGGER
 # Check if all directories from the configuration file exist, otherwise create them.
 def check_directories(category):
     time.sleep(0.5)
@@ -35,20 +34,24 @@ def check_directories(category):
         print(f'\t{category} does not exists -> {exists}, creating...')
 
 
-# At the begining, do some housekeeping
+# At the beginning, do some housekeeping
 def setup():
 
     print(f"Setting a few things up, hang on...\n")
 
     # Defining entries for Artifact Categories
     with open(CONF_FILE, 'r', encoding="UTF-8") as f:
-        reader = csv.reader(f,delimiter=',')
-        return [{'category': entry[0], 'path': entry[1], 'permission': entry[2]} for entry in reader if entry[0] != 'ArtifactCategory']
+        reader = csv.reader(f, delimiter=',')
+        return [{'category': entry[0], 'path': entry[1],
+                 'permission': entry[2]} for entry in reader if entry[0] != 'ArtifactCategory']
 
 
 # TODO: Actually Checking if ROOT Permissions
 def check_if_root():
-    logging.warning(f"No sudo permissions detected, please start the application again with root permissions. This is required, because some artifacts are only accessible by root. You can check these artifacts in the configuration file.")
+    logging.warning(f"No sudo permissions detected, "
+                    f"please start the application again with root permissions. "
+                    f"This is required, because some artifacts are only accessible by root. "
+                    f"You can check these artifacts in the configuration file.")
 
 
 # Getting Artifacts based on CONF_FILE
@@ -73,7 +76,7 @@ def main():
     artifacts = setup()
 
     print(f"All Set")
-    print(30* '-')
+    print(30 * '-')
 
     # Add Categories to a Set in order to check if the directories of these have been created
     categories = set()
@@ -82,7 +85,6 @@ def main():
    
     for category in categories:
         check_directories(category)
-        
 
     # Printing a user dialog for the acquisition of the artifacts
     # TODO!: Check if the user has root permissions, if not need to restart the application with root.
@@ -109,8 +111,15 @@ if __name__ == "__main__":
     # Define all arguments that can be submitted
     arg_parser = argparse.ArgumentParser()
 
-    arg_parser.add_argument('-v', '--verbose', action="store_true", default=False) # Set verbosity
+    arg_parser.add_argument('-v', '--verbose', action="store_true", default=False)  # Set verbosity
     arg_parser.add_argument('-o', '--output-path', help='Specify the path for the collectors output')
+    arg_parser.add_argument('-s', "--start", required=True, help="Specify a starting directory")
+    arg_parser.add_argument('-H', "--hash",
+                            required=False,
+                            action="store_true",
+                            help="Create file hashes of collected data, takes longer")
+    arg_parser.add_argument("-w", "--whitelist", nargs='*', required=False, help="Whitelist specified directories")
+
     args = arg_parser.parse_args()
 
     # Get some logging setup
@@ -125,4 +134,6 @@ if __name__ == "__main__":
 
     logging.info("It works.")
     logging.info(f"Loaded Modules {modules}")
-    #main()
+
+    # Staring Collection Script
+    file_walker.run_collection(args.start, args.output-path, args.hash, args.whitelist)

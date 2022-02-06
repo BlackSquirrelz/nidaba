@@ -1,0 +1,30 @@
+import hashlib
+import time
+import os
+import stat
+import config
+
+
+# TODO: Create generic Hash Function instead
+def get_hash(fp):
+    with open(fp, 'rb') as fh:
+        m = hashlib.md5()
+        while True:
+            data = fh.read(8192)
+            if not data:
+                break
+            m.update(data)
+            return m.hexdigest()
+
+
+def format_time(timestamp):
+    return time.strftime("%Y-%m-%dT%H:%M:%S", time.gmtime(timestamp))
+
+
+def check_type_special(file_path):
+    special = file_path.st_mode & stat.S_ISUID + file_path.st_mode & stat.S_ISGID + file_path.st_mode & stat.S_ISVTX
+    return config.__SPECIALBITS[str(special)]
+
+
+def stat_file(file_path):
+    return os.stat(file_path), getattr(os.stat(file_path), 'st_birthtime', None)
