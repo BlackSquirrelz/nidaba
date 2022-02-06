@@ -31,15 +31,3 @@ def stat_file(file_path):
     """https://docs.python.org/3/library/stat.html"""
     return os.stat(file_path), getattr(os.stat(file_path), 'st_birthtime', None)
 
-"""
-# TODO: Implement LOGGER
-# Check if all directories from the configuration file exist, otherwise create them.
-def check_directories(category):
-    time.sleep(0.5)
-    #exists = path.exists(category)
-    if exists:
-        print(f'\t{category} exists -> {exists}')
-    else: 
-        os.mkdir(category)
-        print(f'\t{category} does not exists -> {exists}, creating...')
-"""

@@ -33,3 +33,16 @@ class Logger:
             cls._logger.addHandler(stream_handler)
 
         return cls._logger
+
+"""# Get some logging setup
+    # TODO: Define further logging levels
+    if args.verbose:
+        logging_level = logging.INFO
+    else:
+        logging_level = logging.WARNING
+
+    log_name = str(cur_date) + "_basic.log"
+    logging.basicConfig(filename=log_name, level=logging_level)
+
+    logging.info("It works.")
+    logging.info(f"Loaded Modules {modules}")"""

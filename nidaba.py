@@ -3,14 +3,14 @@
 # nidaba.py
 
 import os
-from os import path
 import argparse
 import logging
 import time
 import getpass
 from datetime import date
-
+import stat
 import Logger
+import artifacts
 from version import __VERSION
 import FileListing.filewalker as file_walker
 from config import __WHITELIST
@@ -34,7 +34,7 @@ def program_header():
     print(f"Welcome to {__PROGRAM} - {__VERSION}")
     start_time = time.gmtime()
     print(start_time)
-    print(25 * "===")
+    print(25 * "---" + 'Start Collection' + 25 * "---")
 
 
 # Main Function of Program
@@ -87,4 +87,24 @@ if __name__ == "__main__":
 
     # Finishing with some Mass Effect 2 Quotes (Harbinger)
     # https://masseffect.fandom.com/wiki/Harbinger_(Collector)/Battle_Quotes
+
+    # Get Artifacts
+    # TODO: Move to Artifacts File
+    artifact_set = artifacts.get_artifact_list()
+    no_artifacts = len(artifact_set)
+    print(f"Size Artifact List: {no_artifacts}")
+    artifact_dump = args.output_path + '/collected_artifacts'
+    if not os.path.exists(artifact_dump):
+        os.mkdir(artifact_dump)
+
+    for artifact in artifact_set:
+        artifacts.get_artifacts(artifact, artifact_dump)
+
+    # TODO: Files in copied location do have the same permissons as the original files, this should be changed to 0777
+    """for file in artifact_dump:
+        os.chmod(artifact_dump, stat.S_IWUSR | stat.S_IWGRP | stat.S_IROTH)
+        print(len(artifact_dump))
+    """
+
+    print(25 * "---" + 'THE END' + 25 * "---")
     print("You are no longer relevant")

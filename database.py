@@ -12,3 +12,7 @@ def timeline_table(cur):
     cur.execute('''DROP TABLE IF EXISTS timeline;''')
     cur.execute('''CREATE TABLE timeline
                 (timestamp NUMERIC, type TEXT, file_name TEXT);''')
+
+
+def artifcat_list(cur):
+    return cur.execute('''SELECT path FROM artifacts ORDER BY path''').fetchall()
