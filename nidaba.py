@@ -36,6 +36,7 @@ def check_directories(category):
 
 
 # At the begining, do some housekeeping
+# TODO: Simplify
 def setup():
 
     print(f"Setting a few things up, hang on...\n")
@@ -48,7 +49,11 @@ def setup():
 
 # TODO: Actually Checking if ROOT Permissions
 def check_if_root():
-    logging.warning(f"No sudo permissions detected, please start the application again with root permissions. This is required, because some artifacts are only accessible by root. You can check these artifacts in the configuration file.")
+    logging.warning(f"No sudo permissions detected, please "
+                    f"start the application again with root permissions. "
+                    f"This is required, because some artifacts are only"
+                    f" accessible by root. You can check these artifacts in "
+                    f"the configuration file.")
 
 
 # Getting Artifacts based on CONF_FILE
@@ -63,17 +68,8 @@ def get_artifacts(art_path, art_category):
 
 
 def main():
-    print(f"Nidaba - Triage tool for MacOS")
-    print(30 * '=')
-
-    start_time = time.gmtime()
-    print(start_time)
-
     # Setting Up Stuff at the beginning.
     artifacts = setup()
-
-    print(f"All Set")
-    print(30* '-')
 
     # Add Categories to a Set in order to check if the directories of these have been created
     categories = set()
@@ -102,13 +98,10 @@ def main():
 
 # Main Function of Program
 if __name__ == "__main__":
-    # TODO: List of Modules in the future, so the user can select what to parse.
-    modules = ['soso']
-
+    start_time = time.gmtime()
     cur_date = date.today()
     # Define all arguments that can be submitted
-    arg_parser = argparse.ArgumentParser()
-
+    arg_parser = argparse.ArgumentParser(description=f"{__PROGRAM} {__VERSION} - Triage tool for macOS by {__AUTHOR}")
     arg_parser.add_argument('-v', '--verbose', action="store_true", default=False) # Set verbosity
     arg_parser.add_argument('-o', '--output-path', help='Specify the path for the collectors output')
     args = arg_parser.parse_args()
@@ -123,6 +116,9 @@ if __name__ == "__main__":
     log_name = str(cur_date) + "_basic.log"
     logging.basicConfig(filename=log_name, level=logging_level)
 
-    logging.info("It works.")
+    logging.info(f"Started Progam: {start_time}")
+
+    # TODO: List of Modules in the future, so the user can select what to parse.
+    modules = []
     logging.info(f"Loaded Modules {modules}")
     #main()
