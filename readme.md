@@ -24,31 +24,37 @@ The script gathers evidence from categories such as Installed Applications, Netw
 User Accounts, Keychains, Firewall, Launch Agents and Launch Daemons etc. Not all of them work for all of the versions of
 macOS, I am working on implementing some more robust checking of macOS Versions and relative artifacts.
 
-### Implemented Features
+### How to use
+
+- Set verbosity of log file -v --verbose
+- Specify output directory -o --output-path
+- Specify starting directory -s --start
+- To hash or not to hash -H --hash
+- Provide a list of directories to skip during collection -w --whitelist
+
+Example: 
+
+> python3 nidaba.py -s / -o /Volumes/collector/
+
+---
+
+## Artifacts to be collected
+
+The OS X specific artifacts that will be collected (in the future) are based on 
+- Hacking MacIntosh [1] and,
+- OSX Incident Response [2]
 
 The following table keeps track of the artifacts covered:
 
-Artifacts|Status
----|---
-Logs|Testing
-InstalledApplications|Testing
-NetworkSettings|Testing
-Printers|Testing
-SystemInformation|Testing
-UserAccounts|In Progress
-Keychains|Not Started
-Firewall|Not Started
-Launch Agents|Not Started
-Launch Daemons|Not Started
-Freigaben|Not Started
-Keychains|Not Started
-User Domain|Not Started
+See database.db for detailed list of artifacts.
 
-See locations.csv for detailed list of artifacts.
+## Update February 2022
+
+Created collector script to make a file listing based on OS X Incident Response [2]
 
 ### Sample Output
 
-![Samole output](media/sample_output.png)
+![Sample output](media/sample_output.png)
 
 ---
 
@@ -58,7 +64,7 @@ See locations.csv for detailed list of artifacts.
 2. Copy the repository to a USB Stick
 3. Connect USB Stick to the target device and,
 4. Open a terminal at the location of the script `/Volumes/<USBSTICK>`
-5. Run nidaba.py with sudo rights `sudo python3 nidaba.py`
+5. Run nidaba.py with sudo rights `sudo python3 nidaba.py `
 
 ---
 
@@ -71,6 +77,10 @@ Contributors are welcome, please contact me if you like to help in the developme
 ## References
 
 [1] Brandt, M. (2017). Mac OS Hacking: Professionelle Werkzeuge und Methoden zur forensischen Analyse des Apple-Betriebssystems. Haar: Franzis Verlag.
+
+[2] Bradley, Jaron. OS X Incident Response (p. 76). Elsevier Science. Kindle Edition.
+
+---
 
 ### Other Inspirations
 
