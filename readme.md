@@ -9,7 +9,9 @@ Relies on python standard library, so no external libraries are required.
 
 License: MIT
 
-Status: Active
+Status:
+
+[![CodeQL](https://github.com/BlackSquirrelz/nidaba/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/BlackSquirrelz/nidaba/actions/workflows/codeql-analysis.yml)
 
 ---
 
