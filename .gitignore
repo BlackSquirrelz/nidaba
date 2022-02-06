@@ -3,6 +3,7 @@
 *.log
 *.bom
 *.conf
+.DS_Store
 InstalledApplications/
 NetworkSettings/
 Printers/

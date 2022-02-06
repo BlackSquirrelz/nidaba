@@ -3,6 +3,7 @@ import time
 import os
 import stat
 import config
+import os.path
 
 
 # TODO: Create generic Hash Function instead
@@ -18,7 +19,7 @@ def get_hash(fp):
 
 
 def format_time(timestamp):
-    return time.strftime("%Y-%m-%dT%H:%M:%S", time.gmtime(timestamp))
+    return time.strftime("%Y-%m-%dT %H:%M:%S", time.gmtime(timestamp))
 
 
 def check_type_special(file_path):
@@ -28,3 +29,16 @@ def check_type_special(file_path):
 
 def stat_file(file_path):
     return os.stat(file_path), getattr(os.stat(file_path), 'st_birthtime', None)
+
+"""
+# TODO: Implement LOGGER
+# Check if all directories from the configuration file exist, otherwise create them.
+def check_directories(category):
+    time.sleep(0.5)
+    #exists = path.exists(category)
+    if exists:
+        print(f'\t{category} exists -> {exists}')
+    else: 
+        os.mkdir(category)
+        print(f'\t{category} does not exists -> {exists}, creating...')
+"""
