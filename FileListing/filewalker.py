@@ -23,18 +23,20 @@ def collector(file_name, fi_fd, time_fd, hash_bool):
         else:
             b_string = None
 
+        # TODO: to FIX
         # check for special file bits
         x = (mode & stat.S_ISUID) + (mode & stat.S_ISGID) + (mode & stat.S_ISVTX)
-        special = config.__SPECIALBITS(str(x))
+        special = ""  #config.__SPECIALBITS(str(x))
 
         # TODO: Optimize and add SHA256 hashing algorithm? or SHA1?
-        filetype = config.__FILETYPES[str(oct(mode)[:3])]
+        filetype = config.__FILETYPES[str.upper(oct(mode)[:3])]
+
         if hash_bool and os.path.isfile(file_name):
             md5 = nidaba_utils.get_hash(file_name)  # Currently only MD5 to be changed to another algorithm
-            file_data = f"{file_name} {oct(mode[-3:])} {filetype}" \
+            file_data = f"{file_name} {str.upper(oct(mode)[-3:])} {filetype}" \
                         f"{uid} {gid} {size} {special} {md5}\n"
         else:
-            file_data = f"{file_name} {oct(mode[-3:])} {filetype}" \
+            file_data = f"{file_name} {str.upper(oct(mode)[-3:])} {filetype}" \
                         f"{uid} {gid} {size} {special}\n"
 
         # write data to files
@@ -48,9 +50,6 @@ def collector(file_name, fi_fd, time_fd, hash_bool):
     except OSError:
         logging.log(40, f"OS Error in {file_name}")
 
-    finally:
-        print(f"Ohh yeah...")
-
 
 # Running the collector
 def run_collection(start_dir, dump_dir, hash_bool, whitelist):
@@ -58,7 +57,7 @@ def run_collection(start_dir, dump_dir, hash_bool, whitelist):
     file_info = f"{dump_dir}/file_info.txt"
     file_timeline = f"{dump_dir}/file_timeline.txt"
 
-    with open(file_info, 'w+a') as fi_fd, open(file_timeline, 'w+a') as time_fd:
+    with open(file_info, mode='w') as fi_fd, open(file_timeline, mode='w') as time_fd:
         for dir_name, dir_names, file_names, in os.walk(start_dir, topdown=True):
             dir_names[:] = [d for d in dir_names if d not in whitelist]
             for file_name in file_names:

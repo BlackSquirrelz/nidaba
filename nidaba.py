@@ -13,6 +13,7 @@ import getpass
 from datetime import date
 # from version import __VERSION
 import FileListing.filewalker as file_walker
+from config import __WHITELIST
 
 # Defining Static variables
 CONF_FILE = 'locations.csv'
@@ -135,5 +136,10 @@ if __name__ == "__main__":
     logging.info("It works.")
     logging.info(f"Loaded Modules {modules}")
 
+    if args.whitelist:
+        whitelist = args.whitelist
+    else:
+        whitelist = __WHITELIST
+
     # Staring Collection Script
-    file_walker.run_collection(args.start, args.output-path, args.hash, args.whitelist)
+    file_walker.run_collection(args.start, args.output_path, args.hash, whitelist)
