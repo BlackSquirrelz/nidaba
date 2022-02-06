@@ -28,6 +28,7 @@ def check_type_special(file_path):
 
 
 def stat_file(file_path):
+    """https://docs.python.org/3/library/stat.html"""
     return os.stat(file_path), getattr(os.stat(file_path), 'st_birthtime', None)
 
 """

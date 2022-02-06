@@ -36,6 +36,7 @@ def program_header():
     print(start_time)
     print(25 * "===")
 
+
 # Main Function of Program
 if __name__ == "__main__":
 
@@ -50,18 +51,18 @@ if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
 
     arg_parser.add_argument('-v', '--verbose', action="store_true", default=False)  # Set verbosity
-    arg_parser.add_argument('-o', '--output-path', help='Specify the path for the collectors output')
-    arg_parser.add_argument('-s', "--start", required=True, help="Specify a starting directory")
+    arg_parser.add_argument('-o', '--output-path', help='Specify the path for the collectors output e.g. ~/Desktop')
+    arg_parser.add_argument('-s', "--start", required=True, help="Specify a starting directory for the file walker")
     arg_parser.add_argument('-H', "--hash",
                             required=False,
                             action="store_true",
-                            help="Create file hashes of collected data, takes longer")
-    arg_parser.add_argument("-w", "--whitelist", nargs='*', required=False, help="Whitelist specified directories")
+                            help="Create file hashes of collected data, currently only md5 is supported")
+    arg_parser.add_argument("-w", "--whitelist", nargs='*', required=False, help="Whitelist "
+                                                                                 "specified directories to skip")
 
     args = arg_parser.parse_args()
 
     #logger = Logger.Logger()
-
 
     # Get some logging setup
     # TODO: Define further logging levels
