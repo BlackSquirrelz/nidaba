@@ -13,6 +13,8 @@ Status:
 
 [![CodeQL](https://github.com/BlackSquirrelz/nidaba/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/BlackSquirrelz/nidaba/actions/workflows/codeql-analysis.yml)
 
+[![Pylint](https://github.com/BlackSquirrelz/nidaba/actions/workflows/pylint.yml/badge.svg)](https://github.com/BlackSquirrelz/nidaba/actions/workflows/pylint.yml)
+
 ---
 
 ## Disclaimer
@@ -78,9 +80,9 @@ Contributors are welcome, please contact me if you like to help in the developme
 
 ## References
 
-[1] Brandt, M. (2017). Mac OS Hacking: Professionelle Werkzeuge und Methoden zur forensischen Analyse des Apple-Betriebssystems. Haar: Franzis Verlag.
+- [1] Brandt, M. (2017). Mac OS Hacking: Professionelle Werkzeuge und Methoden zur forensischen Analyse des Apple-Betriebssystems. Haar: Franzis Verlag.
 
-[2] Bradley, Jaron. OS X Incident Response (p. 76). Elsevier Science. Kindle Edition.
+- [2] Bradley, Jaron. OS X Incident Response (p. 76). Elsevier Science. Kindle Edition.
 
 ---
 
