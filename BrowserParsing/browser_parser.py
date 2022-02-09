@@ -1,3 +1,4 @@
+import logging
 import sqlite3
 import plistlib
 import glob
@@ -29,7 +30,27 @@ def print_to_file(string):
 
 def parse_safari_hist_plist(hist_file):
     """ Parse Safari History plist file from older safari versions"""
+    logging.info("Parsing Safari PLIST File")
     history_data = plistlib.readPlist(hist_file)
     for x in history_data['WebHistoryDates']:
         ts_last_visit = convert_apple_time(x['lastVisitedDate'])
         print_to_file(f"{ts_last_visit}, safari_history {x['']}")
+
+
+def parse_safari_hist_db(safari_hist_db):
+    """Parsing Safari Database for newer safari versions"""
+    logging.info("Parsing Safari DB")
+    con = sqlite3.connect(safari_hist_db)
+    cur = con.cursor()
+    cur.execute('''SELECT h.visit_time, i.url
+                    FROM history_visits h
+                    INNER JOIN history_items i ON h.history_item = i.id);''')
+
+
+def parse_chrome_hist_db(chrome_hist_db):
+    logging.info("Parsing Chrome")
+
+
+
+
+
