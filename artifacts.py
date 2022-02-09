@@ -1,3 +1,14 @@
+import sqlite3
+from contextlib import closing
+from config import __DATABASE_PATH
+
+
+# Connect to DB to get a list of the artifacts
+def get_artifacts_list():
+    with closing(sqlite3.connect(__DATABASE_PATH)) as connection:
+        with closing(connection.cursor()) as cursor:
+            rows = cursor.execute("SELECT path FROM artifacts;").fetchall()
+            return rows
 import time
 import logging
 import shutil

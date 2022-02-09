@@ -1,9 +1,16 @@
+import datetime
 import hashlib
 import time
 import os
 import stat
 import config
 import os.path
+
+""" Utilities that are used often in the application
+- Time Conversion
+- Hashing
+- Lookup of File Stats
+"""
 
 
 # TODO: Create generic Hash Function instead
@@ -17,9 +24,21 @@ def get_hash(fp):
             m.update(data)
             return m.hexdigest()
 
+# ==== TIME Conversion stuff ====
+
 
 def format_time(timestamp):
+    """ Format timestamp to the desired timestamp format => 2022-02-09T 12:00:00"""
     return time.strftime("%Y-%m-%dT %H:%M:%S", time.gmtime(timestamp))
+
+
+def convert_apple_time(apple_formatted_date):
+    """Conversion from Apple Time / Mac absolute Time => Seconds since 2001-01-01 00:00:00 to UTC Time"""
+    ose = (int(time.mktime(datetime.date(2001, 1, 1).timetuple())) - time.timezone)
+    return format_time(ose+float(apple_formatted_date))
+    #ts = (time.strftime('%Y-%m-%dT %H:%M:%S', time.gmtime(ose+apple_formatted_date)))
+
+# === FILE SYSTEM Stuff ===
 
 
 def check_type_special(file_path):
@@ -30,4 +49,5 @@ def check_type_special(file_path):
 def stat_file(file_path):
     """https://docs.python.org/3/library/stat.html"""
     return os.stat(file_path), getattr(os.stat(file_path), 'st_birthtime', None)
+
 
