@@ -19,7 +19,7 @@ import sqlite3
 def get_artifact_list():
     con = sqlite3.connect('database.db')
     cur = con.cursor()
-    fetched_data = database.artifcat_list(cur)
+    fetched_data = database.artifact_list(cur)
     con.close()
 
     return {artifact[0] for artifact in fetched_data}

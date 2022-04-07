@@ -20,3 +20,5 @@ __SPECIALBITS = {
 }
 
 __WHITELIST = []
+
+__DATABASE_PATH = "database.db"

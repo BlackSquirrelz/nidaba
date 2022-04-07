@@ -47,6 +47,10 @@ def parse_safari_hist_db(safari_hist_db):
                     INNER JOIN history_items i ON h.history_item = i.id);''')
 
 
+def parse_safari_downloads_db(safari_downloads_db):
+    print("Parsing Safari Downloads")
+
+
 def parse_chrome_hist_db(chrome_hist_db):
     logging.info("Parsing Chrome")
 
