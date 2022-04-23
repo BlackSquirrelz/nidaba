@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+#
+# filewalker.py
+# Used to collect a list of all files and strore the name / metadata into a db
+
 import os
 import stat
 import config

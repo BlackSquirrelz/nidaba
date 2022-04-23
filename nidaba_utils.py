@@ -28,7 +28,7 @@ def get_hash(fp):
 
 
 def format_time(timestamp):
-    """ Format timestamp to the desired timestamp format => 2022-02-09T 12:00:00"""
+    """ Format integer timestamp to the desired timestamp format => 2022-02-09T 12:00:00"""
     return time.strftime("%Y-%m-%dT %H:%M:%S", time.gmtime(timestamp))
 
 

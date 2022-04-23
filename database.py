@@ -1,6 +1,7 @@
 """Collection of functions to fetch data from the various databases"""
 
 
+# fileinfo table
 def file_info_table(cur):
     """Create a Table for File Information"""
     cur.execute('''DROP TABLE IF EXISTS fileinfo;''')
@@ -11,6 +12,7 @@ def file_info_table(cur):
                     size NUMERIC, special NUMERIC, hash text);''')
 
 
+# timeline table
 def timeline_table(cur):
     """Create a timeline table"""
     cur.execute('''DROP TABLE IF EXISTS timeline;''')
@@ -18,6 +20,15 @@ def timeline_table(cur):
                 (timestamp NUMERIC, type TEXT, file_name TEXT);''')
 
 
+# Browser data
+def browser_data(cur):
+    """Create table to store parsed browser data"""
+    cur.execute('''DROP TABLE if EXISTS browserdata;''')
+    cur.execute('''CREATE TABLE browserdata
+                (browser TEXT, type TEXT, url TEXT, created NUMERIC, accessed NUMERIC);''')
+
+
+# Artifact List
 def artifact_list(cur):
     """Get the list of artifacts from the database"""
     return cur.execute('''SELECT path FROM artifacts ORDER BY path''').fetchall()

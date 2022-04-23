@@ -1,4 +1,7 @@
 import sqlite3
+import shutil
+import database
+import sqlite3
 from contextlib import closing
 from config import __DATABASE_PATH
 
@@ -9,11 +12,6 @@ def get_artifacts_list():
         with closing(connection.cursor()) as cursor:
             rows = cursor.execute("SELECT path FROM artifacts;").fetchall()
             return rows
-import time
-import logging
-import shutil
-import database
-import sqlite3
 
 
 def get_artifact_list():
@@ -26,6 +24,7 @@ def get_artifact_list():
 
 
 # Getting Artifacts based on CONF_FILE
+# TODO: Artifacts probably have to be specifically copied instead of all at once
 def get_artifacts(art_path, dump_dir):
     try:
         # Use Copy 2 to preserve metadata
