@@ -25,7 +25,7 @@ def browser_data(cur):
     """Create table to store parsed browser data"""
     cur.execute('''DROP TABLE if EXISTS browserdata;''')
     cur.execute('''CREATE TABLE browserdata
-                (browser TEXT, type TEXT, url TEXT, created NUMERIC, accessed NUMERIC);''')
+                (browser TEXT, type TEXT, title TEXT, url TEXT, created NUMERIC, accessed NUMERIC);''')
 
 
 # Artifact List
