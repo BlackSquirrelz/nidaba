@@ -31,8 +31,9 @@ macOS, I am working on implementing some more robust checking of macOS Versions 
 ### How to use
 
 - Set verbosity of log file -v --verbose
+- Collect and parse browser artefacts -b --browser *Currently only safari
 - Specify output directory -o --output-path
-- Specify starting directory -s --start
+- Specify starting directory -s --start *directory from which to start collecting fileinformation
 - To hash or not to hash -H --hash
 - Provide a list of directories to skip during collection -w --whitelist
 
@@ -67,8 +68,10 @@ Created collector script to make a file listing based on OS X Incident Response 
 1. Clone Repository to your local machine
 2. Copy the repository to a USB Stick
 3. Connect USB Stick to the target device and,
-4. Open a terminal at the location of the script `/Volumes/<USBSTICK>`
+4. Open a terminal at the location of the script e.g. `/Volumes/<USBSTICK>`
 5. Run nidaba.py with sudo rights `sudo python3 nidaba.py `
+
+Note Tool needs Full Disk access to be able to gather the artefacts.
 
 ---
 
