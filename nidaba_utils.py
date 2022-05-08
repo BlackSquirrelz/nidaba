@@ -40,9 +40,8 @@ def convert_apple_time(apple_formatted_date):
     return format_time(ose+float(apple_formatted_date))
     #ts = (time.strftime('%Y-%m-%dT %H:%M:%S', time.gmtime(ose+apple_formatted_date)))
 
+
 # === FILE SYSTEM Stuff ===
-
-
 def check_type_special(file_path):
     special = file_path.st_mode & stat.S_ISUID + file_path.st_mode & stat.S_ISGID + file_path.st_mode & stat.S_ISVTX
     return config.__SPECIALBITS[str(special)]
@@ -52,7 +51,7 @@ def stat_file(file_path):
     """https://docs.python.org/3/library/stat.html"""
     return os.stat(file_path), getattr(os.stat(file_path), 'st_birthtime', None)
 
-
+# JSON Handling
 def get_json(file_name):
     """ Generic function to retrieve data from JSON file"""
     logging.debug(f"Reading JSON {file_name}")
@@ -66,5 +65,11 @@ def save_json(outfile, content):
     logging.debug(f"Written JSON as {outfile}")
     with open(outfile, 'w') as f:
         json.dump(content, f, indent=4)
+
+
+# Check if a directory exists and if not create it.
+def check_directory(dir_path):
+    if not os.path.exists(dir_path):
+        os.mkdir(dir_path)
 
 

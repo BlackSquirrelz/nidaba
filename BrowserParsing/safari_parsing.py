@@ -3,7 +3,7 @@
 # safari_parsing.py
 
 import plistlib
-import browser_parser
+import BrowserParsing.browser_parser
 import logging
 import sqlite3
 import os

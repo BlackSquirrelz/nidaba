@@ -9,7 +9,7 @@ import sqlite3
 import os
 import database
 import shutil
-import safari_parsing
+import BrowserParsing.safari_parsing
 
 
 def browser_parsing(args):

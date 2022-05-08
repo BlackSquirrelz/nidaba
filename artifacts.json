@@ -1,5 +1,6 @@
 {
-  "browsers": {
+  "triage": {
+    "browsers": {
     "chrome": [
       "/Users/*/Library/Application Support/Google/Chrome/Local State",
       "/Users/*/Library/Application Support/Google/Chrome/Default/*",
@@ -332,7 +333,11 @@
       "/private/etc/rc.common",
       "/private/etc/emond.d/*",
       "/private/etc/emond.d/*/*"
-    ],
+    ]
+  }
+  },
+  "additional":
+  {
     "coreanalytics": [
       "/Library/Logs/DiagnosticReports/Analytics*.core_analytics",
       "/Library/Logs/DiagnosticReports/Retired/Analytics*.core_analytics",
