@@ -73,6 +73,8 @@ Created collector script to make a file listing based on OS X Incident Response 
 
 Note Tool needs Full Disk access to be able to gather the artefacts.
 
+Nidaba is developed with Python 3, with macOS 12.13 Apple is no longer bundling Python 2.7, see https://developer.apple.com/documentation/macos-release-notes/macos-12_3-release-notes#Python
+
 ---
 
 ## Contributions
