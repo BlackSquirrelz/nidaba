@@ -1,0 +1,345 @@
+{
+  "browsers": {
+    "chrome": [
+      "/Users/*/Library/Application Support/Google/Chrome/Local State",
+      "/Users/*/Library/Application Support/Google/Chrome/Default/*",
+      "/Users/*/Library/Application Support/Google/Chrome/Profile */*",
+      "/Users/*/Library/Application Support/Google/Chrome/Guest Profile/*",
+      "/Users/*/Library/Application Support/Google/Chrome/*/Top Sites",
+      "/Users/*/Library/Application Support/Google/Chrome/*/History",
+      "/Users/*/Library/Application Support/Google/Chrome/*/Last Tabs",
+      "/Users/*/Library/Application Support/Google/Chrome/*/Current Tabs",
+      "/Users/*/Library/Application Support/Google/Chrome/*/Last Session",
+      "/Users/*/Library/Application Support/Google/Chrome/*/Current State",
+      "/Users/*/Library/Application Support/Google/Chrome/*/Extensions/*/*/*",
+      "/Users/*/Library/Application Support/Google/Chrome/*/Extensions/*/*/_locales/*/messages.json"
+
+    ],
+    "firefox": [
+      "/Users/*/Library/Application Support/Firefox/Profiles/*.*/*"
+    ],
+    "safari": [
+      "/Users/*/Library/Containers/com.apple.Safari/Data/Library/Cookies/*",
+      "/Users/*/Library/Cookies/*",
+      "/Users/*/Library/Containers/com.apple.Safari/Data/Library/Safari/SafariTabs.db",
+      "/Users/*/Library/Containers/com.apple.Safari/Data/Library/Preferences/com.apple.Safari.plist",
+      "/Users/*/Library/Safari/*",
+      "/Users/*/Library/Preferences/com.apple.Safari.plist",
+      "/Users/*/Library/Safari/Extensions/Extensions.plist",
+      "/private/var/*/Library/Safari/*",
+      "/private/var/*/Library/Safari/Extensions/Extensions.plist",
+      "/Users/*/Library/Containers/com.apple.Safari/Data/Library/Safari/AppExtensions/Extensions.plist"
+    ]
+  },
+
+  "persistence": {
+    "autoruns": [
+      "/private/var/db/launchd.db/com.apple.launchd/overrides.plist",
+      "/private/var/db/launchd.db/com.apple.launchd.peruser.*/overrides.plist"
+    ],
+    "autostarts": [
+      "/System/Library/Extensions/*",
+      "/System/Library/Extensions/*/*",
+      "/System/Library/Extensions/*/*/*",
+      "/System/Library/Extensions/*/*/*/*",
+      "/System/Library/Extensions/*/*/*/*/*",
+      "/Library/Extensions/*",
+      "/Library/Extensions/*/*",
+      "/Library/Extensions/*/*/*",
+      "/Library/Extensions/*/*/*/*",
+      "/Library/Extensions/*/*/*/*/*",
+      "/private/var/db/launchd.db/*/*"
+    ],
+    "crontab": "/private/var/at/tabs/*",
+    "launch_agents": [
+      "/Library/LaunchAgents/*.plist",
+      "/System/Library/LaunchAgents/*.plist",
+      "/Users/*/Library/LaunchAgents/*.plist",
+      "/System/Library/LaunchAgents/.*.plist",
+      "/Library/LaunchAgents/.*.plist",
+      "/Users/*/Library/LaunchAgents/.*.plist",
+      "/private/var/*/Library/LaunchAgents/*.plist",
+      "/private/var/*/Library/LaunchAgents/.*.plist",
+      "/Library/Apple/System/Library/LaunchAgents/*.plist",
+      "/Library/Apple/System/Library/LaunchAgents/.*.plist"
+    ],
+    "launch_items": [],
+    "launch_demons": [
+      "/System/Library/LaunchDaemons/*.plist",
+      "/Library/LaunchDaemons/*.plist",
+      "/System/Library/LaunchDaemons/.*.plist",
+      "/Library/LaunchDaemons/.*.plist",
+      "/Library/Apple/System/Library/LaunchDaemons/.*.plist",
+      "/Library/Apple/System/Library/LaunchDaemons/*.plist"
+      ],
+    "login_items": [
+      "/Users/*/Library/Preferences/com.apple.loginitems.plist",
+      "/private/var/*/Library/Preferences/com.apple.loginitems.plist",
+      "/Users/*/Library/Application Support/com.apple.backgroundtaskmanagementagent/backgrounditems.btm"
+    ],
+    "startup_items": [
+      "/System/Library/StartupItems/*/*",
+      "/Library/StartupItems/*/*"
+    ]
+  },
+  "imessage": [
+    "/Users/*/Library/Messages/Attachments/*",
+    "/Users/*/Library/Messages/chat.db*"
+  ],
+  "idevice": [
+    "/Users/*/Library/Application Support/MobileSync/Backup/*/*",
+    "/Users/*/Library/Preferences/com.apple.iPod.plist"
+  ],
+  "networking": {
+    "network_settings": [
+      "/Library/Preferences/SystemConfiguration/NetworkInterfaces.plist",
+      "/Library/Preferences/SystemConfiguration/preferences.plist",
+      "/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist",
+      "/private/var/db/dhcpclient/leases/*.xml",
+      "/Users/*/.ssh/known_hosts",
+      "/private/var/db/dhcpclient/DUID_IA.plist",
+      "/private/var/db/dhcpclient/leases/*",
+      "/private/var/run/resolv.conf",
+      "/private/etc/hosts"
+    ],
+    "bluetooth": "/Library/Preferences/com.apple.Bluetooth.plist",
+    "netusage": [
+      "/private/var/networkd/netusage.sqlite*",
+      "/private/var/networkd/db/netusage.sqlite*"
+    ],
+    "airport": "/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist",
+    "airdrop": "",
+    "inetaccounts": [
+      "/Users/*/Library/Preferences/MobileMeAccounts.plist",
+      "/Users/*/Library/Accounts/Accounts*.*",
+      "/Users/*/Library/Accounts/VerifiedBackup/Accounts*.*"],
+    "ssh": [
+      "/Users/*/.ssh/*",
+      "/private/var/*/.ssh/*",
+      "/private/etc/ssh/sshrc"
+    ],
+    "wifi": [
+      "/private/var/log/wifi.log",
+      "/private/var/log/wifi.log.*.bz2"
+    ]
+  },
+  "filesystem": {
+    "cache": [
+      "/Users/*/Library/Caches/*/Cache.db*",
+      "/Users/*/Library/Caches/*/fsCachedData/*"
+    ],
+    "fsevents": [
+      "/.fseventsd/*",
+      "/System/Volumes/Data/.fseventsd/*"
+    ],
+    "filesharing": "/private/var/db/dslocal/nodes/Default/sharepoints/*",
+    "mru": [
+      "/Users/*/Library/Preferences/com.apple.finder.plist",
+      "/private/var/*/Library/Preferences/com.apple.finder.plist",
+      "/Users/*/Library/Preferences/.GlobalPreferences.plist",
+      "/Users/*/Library/Preferences/*.LSSharedFileList.plist",
+      "/Users/*/Library/Preferences/com.apple.recentitems.plist",
+      "/Users/*/Library/Preferences/com.apple.sidebarlists.plist",
+      "/private/var/*/Library/Preferences/com.apple.sidebarlists.plist",
+      "/Users/*/Library/Application Support/com.apple.sharedfilelist/*.sfl",
+      "/Users/*/Library/Application Support/com.apple.sharedfilelist/*/*.sfl",
+      "/private/var/*/Library/Application Support/com.apple.sharedfilelist/*/*.sfl",
+      "/Users/*/Library/Application Support/com.apple.sharedfilelist/*.sfl2",
+      "/Users/*/Library/Application Support/com.apple.sharedfilelist/*/*.sfl2",
+      "/private/var/*/Library/Application Support/com.apple.sharedfilelist/*/*.sfl2"
+    ],
+    "msoffice": [
+      "/Users/*/Library/Preferences/com.microsoft.office.plist",
+      "/Users/*/Library/Containers/com.microsoft.*/Data/Library/Preferences/com.microsoft.*.plist",
+      "/Users/*/Library/Containers/com.microsoft.*/Data/Library/Preferences/com.microsoft.*.securebookmarks.plist",
+      "/private/var/*/Library/Containers/com.microsoft.*/Data/Library/Preferences/com.microsoft.*.securebookmarks.plist",
+      "/Users/*/Library/Group Containers/*.Office/MicrosoftRegistrationDB.reg*"
+    ],
+    "document_revisions": [
+      "/.DocumentRevisions-V100/db-V1/db.sqlite*",
+      "/System/Volumes/Data/.DocumentRevisions-V100/db-V1/db.sqlite*"
+    ],
+    "dynamic_text": [
+      "/Users/*/Library/Spelling/dynamic-text.dat",
+      "/Users/*/Library/Spelling/*"
+    ],
+    "locations": [
+      "/Library",
+      "/System",
+      "/Users",
+      "/Applications",
+      "/Network",
+      "/tmp"
+    ]
+  },
+  "app_list": "/Users/*/Library/Application Support/com.apple.spotlight/appList.dat",
+  "activedirectory": "/Library/Preferences/OpenDirectory/Configurations/Active Directory/*",
+  "asl": "/private/var/log/asl/*.asl",
+  "ard": [
+    "/private/var/db/RemoteManagement/caches/*",
+    "/private/var/db/RemoteManagement/ClientCaches/*/*",
+    "/private/var/db/RemoteManagement/RMDB/*"
+  ],
+  "screentime": "/private/var/folders/*/*/0/com.apple.ScreenTimeAgent/Store/*",
+  "spotlight": [
+    "/Users/*/Library/Application Support/com.apple.spotlight.Shortcuts",
+    "/private/var/*/Library/Application Support/com.apple.spotlight.Shortcuts",
+    "/Users/*/Library/Application Support/com.apple.spotlight/com.apple.spotlight.Shortcuts",
+    "/private/var/*/Library/Application Support/com.apple.spotlight/com.apple.spotlight.Shortcuts",
+    "/System/Volumes/Data/.Spotlight-V100/Store-V2/*/store.db",
+    "/System/Volumes/Data/.Spotlight-V100/Store-V2/*/.store.db",
+    "/System/Volumes/Data/private/var/db/Spotlight-V100/BootVolume/Store-V2/*/store.db",
+    "/System/Volumes/Data/private/var/db/Spotlight-V100/BootVolume/Store-V2/*/.store.db",
+    "/private/var/db/Spotlight-V100/BootVolume/Store-V2/*/store.db",
+    "/private/var/db/Spotlight-V100/BootVolume/Store-V2/*/.store.db",
+    "/System/Volumes/Data/.Spotlight-V100/Store-V2/*/dbStr-*",
+    "/System/Volumes/Data/private/var/db/Spotlight-V100/BootVolume/Store-V2/*/dbStr-*",
+    "/private/var/db/Spotlight-V100/BootVolume/Store-V2/*/dbStr-*",
+    "/private/var/*/Library/Application Support/com.apple.spotlight/com.apple.spotlight.Shortcuts.v3",
+    "/Users/*/Library/Preferences/com.apple.spotlight.plist",
+    "/.Spotlight-V100/Store-V2/*/store.db",
+    "/.Spotlight-V100/Store-V2/*/.store.db",
+    "/.Spotlight-V100/Store-V2/*/dbStr-*",
+    "/.Spotlight-V100/VolumeConfiguration.plist",
+    "/System/Volumes/Data/.Spotlight-V100/VolumeConfiguration.plist",
+    "/Users/*/Library/Metadata/CoreSpotlight/index.spotlightV3/store.db",
+    "/Users/*/Library/Metadata/CoreSpotlight/index.spotlightV3/.store.db",
+    "/Users/*/Library/Metadata/CoreSpotlight/index.spotlightV3/dbStr-*"
+  ],
+  "utmpx": "/private/var/run/utmpx",
+  "install_history": "/Library/Receipts/InstallHistory.plist",
+  "interactions": "/private/var/db/CoreDuet/People/interactionC.*",
+  "dockitems": "/Users/*/Library/Preferences/com.apple.dock.plist",
+  "trash": "/Users/*/.Trash/.DS_Store",
+  "logging": {
+    "syslog": "/private/var/log/system.log*",
+    "unified_log": [
+      "/private/var/db/uuidtext/*/*",
+      "/private/var/db/diagnostics/*/*"
+    ]
+  },
+  "printer": {
+    "cups": "/private/var/spool/cups/*"
+  },
+  "notifications": [
+    "/Users/*/Library/Application Support/NotificationCenter/*.db*",
+    "/private/var/folders/*/*/0/com.apple.notificationcenter/db/db*",
+    "/private/var/folders/*/*/0/com.apple.notificationcenter/db2/db*"
+  ],
+  "notes": [
+    "/Users/*/Library/Containers/com.apple.Notes/Data/Library/Notes/*",
+    "/Users/*/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite*"
+  ],
+  "system": {
+    "preferences": [
+      "/Library/Preferences/SystemConfiguration/preferences.plist",
+      "/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/C/*"
+    ],
+    "battery_history": "/private/var/db/powerlog/Library/BatteryLife/Archives/*",
+    "battery": "/private/var/db/powerlog/Library/BatteryLife/*",
+    "system_info": [
+      "/Library/Preferences/.GlobalPreferences.plist",
+      "/Library/Preferences/SystemConfiguration/preferences.plist",
+      "/System/Library/CoreServices/SystemVersion.plist",
+      "/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/C/*"
+    ],
+    "knowledge_db": [
+      "/private/var/db/CoreDuet/Knowledge/*",
+      "/Users/*/Library/Application Support/Knowledge/*"
+    ],
+    "system_policy": [
+      "/private/var/db/SystemPolicyConfiguration/*",
+      "/private/var/db/SystemPolicyConfiguration/KextPolicy*",
+      "/private/var/db/SystemPolicyConfiguration/ExecPolicy*"
+    ],
+    "saved_state": [
+      "/Users/*/Library/Saved Application State/com.apple.Terminal.savedState/*",
+      "/Users/*/Library/Saved Application State/*/*"
+    ],
+    "sandbox": "/private/var/db/com.apple.xpc.launchd/disabled.*.plist",
+    "quarantine": [
+      "/Users/*/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2",
+      "/private/var/*/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2",
+      "/private/var/db/.LastGKReject"
+    ],
+    "tcc": [
+      "/Library/Application Support/com.apple.TCC/TCC.db*",
+      "/Users/*/Library/Application Support/com.apple.TCC/TCC.db*"
+    ],
+    "scripting": [
+      "/System/Library/ScriptingAdditions/*.osax",
+      "/Library/ScriptingAdditions/*.osax",
+      "/System/Library/ScriptingAdditions/.*.osax",
+      "/Library/ScriptingAdditions/.*.osax"
+    ],
+    "terminal": {
+      "sudo": "/private/var/db/sudo/ts/*",
+      "cmdhist": "/Users/*/.*_history",
+      "bash": [
+        "/Users/*/.bash_history",
+        "/Users/*/.bash_sessions/*",
+        "/private/var/*/.bash_history",
+        "/private/var/*/.bash_sessions/*",
+        "/private/etc/profile",
+        "/Users/*/.profile",
+        "/Users/*/.bash_profile",
+        "/private/etc/bashrc*",
+        "/Users/*/.bashrc",
+        "/Users/*/.bash_logout"
+      ],
+      "zsh": [
+        "/Users/*/.zsh_history",
+        "/Users/*/.zsh_sessions/*",
+        "/private/etc/zshenv",
+        "/Users/*/.zshenv",
+        "/private/etc/zprofile",
+        "/Users/*/.zprofle",
+        "/private/etc/zshrc",
+        "/Users/*/.zshrc",
+        "/private/etc/zlogin",
+        "/Users/*/.zlogin",
+        "/private/etc/zlogout",
+        "/Users/*/.zlogout"
+      ]
+    },
+    "quicklook": [
+      "/private/var/folders/*/*/C/com.apple.QuickLook.thumbnailcache/index.sqlite*",
+      "/private/var/folders/*/*/C/com.apple.QuickLook.thumbnailcache/thumbnails.data",
+      "/private/var/folders/*/*/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache/index.sqlite*",
+      "/private/var/folders/*/*/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache/thumbnails.data"
+    ],
+    "passwords": {
+      "keychain": [
+        "/Library/Keychains/System.keychain",
+        "/private/var/db/SystemKey",
+        "/Users/*/Library/Keychains/login.keychain",
+        "/Users/*/Library/Keychains/login.keychain-db",
+        "/private/etc/kcpassword"
+      ]
+    },
+    "users": [
+      "/Users/*",
+      "/private/var/*",
+      "/private/var/db/dslocal/nodes/Default/users/*",
+      "/private/var/db/dslocal/nodes/Default/groups/admin.plist",
+      "/Library/Preferences/com.apple.preferences.accounts.plist",
+      "/Library/Preferences/com.apple.loginwindow.plist"
+    ],
+    "special_artifacts":[
+      "/private/etc/periodic.conf",
+      "/private/etc/periodic/*/*",
+      "/private/etc/*.local",
+      "/private/etc/rc.common",
+      "/private/etc/emond.d/*",
+      "/private/etc/emond.d/*/*"
+    ],
+    "coreanalytics": [
+      "/Library/Logs/DiagnosticReports/Analytics*.core_analytics",
+      "/Library/Logs/DiagnosticReports/Retired/Analytics*.core_analytics",
+      "/private/var/db/analyticsd/aggregates/4d7c9e4a-8c8c-4971-bce3-09d38d078849",
+      "/private/var/db/analyticsd/aggregates/*",
+      "/private/var/db/analyticsd/aggregates/*/*",
+      "/private/var/db/analyticsd/aggregates/*/*/*"
+    ]
+  }
+}
