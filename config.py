@@ -33,3 +33,5 @@ __DT_LOOKUP = {
     8: 'POTENTIALLY_UNWANTED',
     9: 'MAX'
 }
+
+__ARTIFACTS_LIST = "artifacts.json"

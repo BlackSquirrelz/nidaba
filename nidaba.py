@@ -7,7 +7,6 @@
 import os
 import argparse
 import logging
-import shutil
 import sys
 import time
 import getpass
@@ -37,8 +36,7 @@ def Logger(log_file_path, log_file_level=logging.DEBUG, log_console_level=loggin
         lf_handler.setFormatter(lf_format)
         logger.addHandler(lf_handler)
     except Exception as e:
-        print("What the fuck just happened?")
-        traceback.print_exc()
+        logging.error(traceback.print_exc())
         sys.exit("The logging function raised an exception")
     return logger
 

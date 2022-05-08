@@ -5,6 +5,8 @@ import os
 import stat
 import config
 import os.path
+import json
+import logging
 
 """ Utilities that are used often in the application
 - Time Conversion
@@ -49,5 +51,20 @@ def check_type_special(file_path):
 def stat_file(file_path):
     """https://docs.python.org/3/library/stat.html"""
     return os.stat(file_path), getattr(os.stat(file_path), 'st_birthtime', None)
+
+
+def get_json(file_name):
+    """ Generic function to retrieve data from JSON file"""
+    logging.debug(f"Reading JSON {file_name}")
+    with open(file_name) as f:
+        data = json.load(f)
+        return data
+
+
+def save_json(outfile, content):
+    """ Generic function to save dictionary data to a JSON file"""
+    logging.debug(f"Written JSON as {outfile}")
+    with open(outfile, 'w') as f:
+        json.dump(content, f, indent=4)
 
 
