@@ -73,3 +73,10 @@ def check_directory(dir_path):
         os.mkdir(dir_path)
 
 
+def get_users():
+    users = [user for user in os.listdir("/Users/") if user != ".localized"]
+    users.append("root")
+    return users
+
+
+

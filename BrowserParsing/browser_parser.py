@@ -7,6 +7,8 @@
 import logging
 import sqlite3
 import os
+
+import artifacts
 import database
 import shutil
 import BrowserParsing.safari_parsing
@@ -18,6 +20,9 @@ def browser_parsing(args):
 
     logging.info(f"Collecting Browser Information\n")
 
+    browser_artifact_locations = artifacts.get_artifact_list("browser")
+    print(browser_artifact_locations)
+
     # Collecting Safari
     # TODO: Make distinction better between the browsers
     logging.info("Copy Safari Files")
@@ -25,7 +30,7 @@ def browser_parsing(args):
     shutil.copy2(browser_file, args.output_path)
 
     if os.path.join(args.output_path, 'Bookmarks.plist'):
-        safari_parsing.safari_parser(args, con)
+        BrowserParsing.safari_parsing.safari_parser(args, con)
     con.close()
 
 
@@ -54,5 +59,3 @@ def print_to_file(string):
     output_file = 'browser_history.txt'
     with open(output_file, 'a') as fd:
         fd.write(string)
-
-

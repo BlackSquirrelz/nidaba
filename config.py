@@ -35,3 +35,28 @@ __DT_LOOKUP = {
 }
 
 __ARTIFACTS_LIST = "artifacts.json"
+
+__TRIAGE = ["initial_access",
+            "execution",
+            "persistence",
+            "priv_esc",
+            "defense_evasion",
+            "cred_access",
+            "lateral_movement",
+            "c2"
+            ]
+
+__ALL = ["initial_access",
+         "execution",
+         "persistence",
+         "priv_esc",
+         "defense_evasion",
+         "cred_access",
+         "discovery",
+         "lateral_movement",
+         "collection",
+         "c2",
+         "exfiltration",
+         "impact",
+         'other'
+         ]

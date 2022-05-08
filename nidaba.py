@@ -12,6 +12,8 @@ import time
 import getpass
 import traceback
 from datetime import date
+
+import nidaba_utils
 from BrowserParsing import browser_parser
 import artifacts
 from version import __VERSION
@@ -19,11 +21,13 @@ import FileListing.filewalker as file_walker
 from config import __WHITELIST
 
 # Defining Static variables
-CONF_FILE = 'locations.csv'
-USERNAME = getpass.getuser()
 __PROGRAM = 'Nidaba'
 __AUTHOR = 'Tobias Weisskopf'
 __EMAIL = 'me@tobias-weisskopf.dev'
+
+# Setting Global Variables
+global USERNAME
+global USERS
 
 
 def Logger(log_file_path, log_file_level=logging.DEBUG, log_console_level=logging.INFO):
@@ -101,6 +105,8 @@ def main():
     """Main Function"""
     # Program Header in Console
     program_header()
+    USERS = nidaba_utils.get_users()
+    USERNAME = getpass.getuser()
 
     # Parse users supplied arguments
     args = argument_parser()

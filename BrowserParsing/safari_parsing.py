@@ -32,7 +32,7 @@ def safari_parser(args, con):
         print(f"\tFound {len(bookmarks_data)} item(s) in Safari Bookmarks")
         old_safari_artefacts.extend(bookmarks_data)
         print(f"Adding {len(old_safari_artefacts)} to browserdata table")
-        browser_parser.write_to_bd_table(old_safari_artefacts, con)
+        BrowserParsing.browser_parser.write_to_bd_table(old_safari_artefacts, con)
 
     print(f"Finished Parsing Safari old\n")
 
