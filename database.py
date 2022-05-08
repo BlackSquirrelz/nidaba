@@ -27,8 +27,3 @@ def browser_data(cur):
     cur.execute('''CREATE TABLE browserdata
                 (browser TEXT, type TEXT, title TEXT, url TEXT, created NUMERIC, accessed NUMERIC);''')
 
-
-# Artifact List
-def artifact_list(cur):
-    """Get the list of artifacts from the database"""
-    return cur.execute('''SELECT path FROM artifacts ORDER BY path''').fetchall()
