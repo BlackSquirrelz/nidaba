@@ -1,8 +1,6 @@
 # Mac Forensics
 
-Author: Tobias Weisskopf
-
-Date: 2021-08-20
+## UNDER DEVELOPMENT
 
 Description: Python Application to get Forensic Artifacts from macOS. Information on Forensic Artifacts used from [1] (Brandt M., 2017)
 Relies on python standard library, so no external libraries are required.
